@@ -6,11 +6,11 @@ issue_tracker: https://github.com/PixelaGt/flusmic/issues
 homepage: https://github.com/PixelaGt/flusmic
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   common_bloc: ^4.2.0
-  extended_image: ^5.1.2
+  extended_image: ^6.0.1
   flusmic: ^3.1.0
   flutter:
     sdk: flutter
