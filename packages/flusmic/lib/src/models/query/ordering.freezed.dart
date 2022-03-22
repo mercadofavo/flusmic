@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'ordering.dart';
@@ -191,7 +192,7 @@ class _$TypeOrdering implements TypeOrdering {
   final String customType;
   @override
   final String field;
-  @JsonKey(defaultValue: false)
+  @JsonKey()
   @override
   final bool descending;
 
@@ -205,15 +206,19 @@ class _$TypeOrdering implements TypeOrdering {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is TypeOrdering &&
-            (identical(other.customType, customType) ||
-                other.customType == customType) &&
-            (identical(other.field, field) || other.field == field) &&
-            (identical(other.descending, descending) ||
-                other.descending == descending));
+            const DeepCollectionEquality()
+                .equals(other.customType, customType) &&
+            const DeepCollectionEquality().equals(other.field, field) &&
+            const DeepCollectionEquality()
+                .equals(other.descending, descending));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, customType, field, descending);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(customType),
+      const DeepCollectionEquality().hash(field),
+      const DeepCollectionEquality().hash(descending));
 
   @JsonKey(ignore: true)
   @override
@@ -357,7 +362,7 @@ class _$DocumentOrdering implements DocumentOrdering {
 
   @override
   final String type;
-  @JsonKey(defaultValue: false)
+  @JsonKey()
   @override
   final bool descending;
 
@@ -371,13 +376,16 @@ class _$DocumentOrdering implements DocumentOrdering {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DocumentOrdering &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.descending, descending) ||
-                other.descending == descending));
+            const DeepCollectionEquality().equals(other.type, type) &&
+            const DeepCollectionEquality()
+                .equals(other.descending, descending));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, type, descending);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(type),
+      const DeepCollectionEquality().hash(descending));
 
   @JsonKey(ignore: true)
   @override
@@ -517,7 +525,7 @@ class _$FirstPublicationDateOrderingCopyWithImpl<$Res>
 class _$FirstPublicationDateOrdering implements FirstPublicationDateOrdering {
   const _$FirstPublicationDateOrdering({this.descending = false});
 
-  @JsonKey(defaultValue: false)
+  @JsonKey()
   @override
   final bool descending;
 
@@ -531,12 +539,13 @@ class _$FirstPublicationDateOrdering implements FirstPublicationDateOrdering {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is FirstPublicationDateOrdering &&
-            (identical(other.descending, descending) ||
-                other.descending == descending));
+            const DeepCollectionEquality()
+                .equals(other.descending, descending));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, descending);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(descending));
 
   @JsonKey(ignore: true)
   @override
@@ -675,7 +684,7 @@ class _$LastPublicationDateOrderingCopyWithImpl<$Res>
 class _$LastPublicationDateOrdering implements LastPublicationDateOrdering {
   const _$LastPublicationDateOrdering({this.descending = false});
 
-  @JsonKey(defaultValue: false)
+  @JsonKey()
   @override
   final bool descending;
 
@@ -689,12 +698,13 @@ class _$LastPublicationDateOrdering implements LastPublicationDateOrdering {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is LastPublicationDateOrdering &&
-            (identical(other.descending, descending) ||
-                other.descending == descending));
+            const DeepCollectionEquality()
+                .equals(other.descending, descending));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, descending);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(descending));
 
   @JsonKey(ignore: true)
   @override

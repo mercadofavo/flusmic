@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'api.dart';
@@ -238,27 +239,27 @@ class _$_Api implements _Api {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Api &&
-            (identical(other.oauthInitiate, oauthInitiate) ||
-                other.oauthInitiate == oauthInitiate) &&
-            (identical(other.oauthToken, oauthToken) ||
-                other.oauthToken == oauthToken) &&
+            const DeepCollectionEquality()
+                .equals(other.oauthInitiate, oauthInitiate) &&
+            const DeepCollectionEquality()
+                .equals(other.oauthToken, oauthToken) &&
             const DeepCollectionEquality().equals(other.types, types) &&
-            (identical(other.license, license) || other.license == license) &&
+            const DeepCollectionEquality().equals(other.license, license) &&
             const DeepCollectionEquality().equals(other.languages, languages) &&
             const DeepCollectionEquality().equals(other.refs, refs) &&
-            (identical(other.version, version) || other.version == version));
+            const DeepCollectionEquality().equals(other.version, version));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      oauthInitiate,
-      oauthToken,
+      const DeepCollectionEquality().hash(oauthInitiate),
+      const DeepCollectionEquality().hash(oauthToken),
       const DeepCollectionEquality().hash(types),
-      license,
+      const DeepCollectionEquality().hash(license),
       const DeepCollectionEquality().hash(languages),
       const DeepCollectionEquality().hash(refs),
-      version);
+      const DeepCollectionEquality().hash(version));
 
   @JsonKey(ignore: true)
   @override

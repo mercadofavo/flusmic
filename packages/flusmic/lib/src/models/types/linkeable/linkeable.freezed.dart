@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'linkeable.dart';
@@ -52,10 +53,10 @@ class _$LinkeableTearOff {
   MediaLinkeable media(
       {String? height,
       String? width,
-      required String kind,
-      required String name,
-      required String size,
-      required String url}) {
+      String? kind,
+      String? name,
+      String? size,
+      String? url}) {
     return MediaLinkeable(
       height: height,
       width: width,
@@ -92,8 +93,8 @@ mixin _$Linkeable {
             String slug,
             bool isBroken)
         document,
-    required TResult Function(String? height, String? width, String kind,
-            String name, String size, String url)
+    required TResult Function(String? height, String? width, String? kind,
+            String? name, String? size, String? url)
         media,
     required TResult Function(String url) web,
   }) =>
@@ -108,8 +109,8 @@ mixin _$Linkeable {
             String slug,
             bool isBroken)?
         document,
-    TResult Function(String? height, String? width, String kind, String name,
-            String size, String url)?
+    TResult Function(String? height, String? width, String? kind, String? name,
+            String? size, String? url)?
         media,
     TResult Function(String url)? web,
   }) =>
@@ -124,8 +125,8 @@ mixin _$Linkeable {
             String slug,
             bool isBroken)?
         document,
-    TResult Function(String? height, String? width, String kind, String name,
-            String size, String url)?
+    TResult Function(String? height, String? width, String? kind, String? name,
+            String? size, String? url)?
         media,
     TResult Function(String url)? web,
     required TResult orElse(),
@@ -278,19 +279,24 @@ class _$DocumentLinkeable implements DocumentLinkeable {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is DocumentLinkeable &&
-            (identical(other.documentType, documentType) ||
-                other.documentType == documentType) &&
+            const DeepCollectionEquality()
+                .equals(other.documentType, documentType) &&
             const DeepCollectionEquality().equals(other.tags, tags) &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.lang, lang) || other.lang == lang) &&
-            (identical(other.slug, slug) || other.slug == slug) &&
-            (identical(other.isBroken, isBroken) ||
-                other.isBroken == isBroken));
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.lang, lang) &&
+            const DeepCollectionEquality().equals(other.slug, slug) &&
+            const DeepCollectionEquality().equals(other.isBroken, isBroken));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, documentType,
-      const DeepCollectionEquality().hash(tags), id, lang, slug, isBroken);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(documentType),
+      const DeepCollectionEquality().hash(tags),
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(lang),
+      const DeepCollectionEquality().hash(slug),
+      const DeepCollectionEquality().hash(isBroken));
 
   @JsonKey(ignore: true)
   @override
@@ -308,8 +314,8 @@ class _$DocumentLinkeable implements DocumentLinkeable {
             String slug,
             bool isBroken)
         document,
-    required TResult Function(String? height, String? width, String kind,
-            String name, String size, String url)
+    required TResult Function(String? height, String? width, String? kind,
+            String? name, String? size, String? url)
         media,
     required TResult Function(String url) web,
   }) {
@@ -327,8 +333,8 @@ class _$DocumentLinkeable implements DocumentLinkeable {
             String slug,
             bool isBroken)?
         document,
-    TResult Function(String? height, String? width, String kind, String name,
-            String size, String url)?
+    TResult Function(String? height, String? width, String? kind, String? name,
+            String? size, String? url)?
         media,
     TResult Function(String url)? web,
   }) {
@@ -346,8 +352,8 @@ class _$DocumentLinkeable implements DocumentLinkeable {
             String slug,
             bool isBroken)?
         document,
-    TResult Function(String? height, String? width, String kind, String name,
-            String size, String url)?
+    TResult Function(String? height, String? width, String? kind, String? name,
+            String? size, String? url)?
         media,
     TResult Function(String url)? web,
     required TResult orElse(),
@@ -431,10 +437,10 @@ abstract class $MediaLinkeableCopyWith<$Res> {
   $Res call(
       {String? height,
       String? width,
-      String kind,
-      String name,
-      String size,
-      String url});
+      String? kind,
+      String? name,
+      String? size,
+      String? url});
 }
 
 /// @nodoc
@@ -468,19 +474,19 @@ class _$MediaLinkeableCopyWithImpl<$Res> extends _$LinkeableCopyWithImpl<$Res>
       kind: kind == freezed
           ? _value.kind
           : kind // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       name: name == freezed
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       size: size == freezed
           ? _value.size
           : size // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       url: url == freezed
           ? _value.url
           : url // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -492,10 +498,10 @@ class _$MediaLinkeable implements MediaLinkeable {
   const _$MediaLinkeable(
       {this.height,
       this.width,
-      required this.kind,
-      required this.name,
-      required this.size,
-      required this.url,
+      this.kind,
+      this.name,
+      this.size,
+      this.url,
       String? $type})
       : $type = $type ?? 'Media';
 
@@ -507,13 +513,13 @@ class _$MediaLinkeable implements MediaLinkeable {
   @override
   final String? width;
   @override
-  final String kind;
+  final String? kind;
   @override
-  final String name;
+  final String? name;
   @override
-  final String size;
+  final String? size;
   @override
-  final String url;
+  final String? url;
 
   @JsonKey(name: 'link_type')
   final String $type;
@@ -528,17 +534,23 @@ class _$MediaLinkeable implements MediaLinkeable {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is MediaLinkeable &&
-            (identical(other.height, height) || other.height == height) &&
-            (identical(other.width, width) || other.width == width) &&
-            (identical(other.kind, kind) || other.kind == kind) &&
-            (identical(other.name, name) || other.name == name) &&
-            (identical(other.size, size) || other.size == size) &&
-            (identical(other.url, url) || other.url == url));
+            const DeepCollectionEquality().equals(other.height, height) &&
+            const DeepCollectionEquality().equals(other.width, width) &&
+            const DeepCollectionEquality().equals(other.kind, kind) &&
+            const DeepCollectionEquality().equals(other.name, name) &&
+            const DeepCollectionEquality().equals(other.size, size) &&
+            const DeepCollectionEquality().equals(other.url, url));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, height, width, kind, name, size, url);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(height),
+      const DeepCollectionEquality().hash(width),
+      const DeepCollectionEquality().hash(kind),
+      const DeepCollectionEquality().hash(name),
+      const DeepCollectionEquality().hash(size),
+      const DeepCollectionEquality().hash(url));
 
   @JsonKey(ignore: true)
   @override
@@ -556,8 +568,8 @@ class _$MediaLinkeable implements MediaLinkeable {
             String slug,
             bool isBroken)
         document,
-    required TResult Function(String? height, String? width, String kind,
-            String name, String size, String url)
+    required TResult Function(String? height, String? width, String? kind,
+            String? name, String? size, String? url)
         media,
     required TResult Function(String url) web,
   }) {
@@ -575,8 +587,8 @@ class _$MediaLinkeable implements MediaLinkeable {
             String slug,
             bool isBroken)?
         document,
-    TResult Function(String? height, String? width, String kind, String name,
-            String size, String url)?
+    TResult Function(String? height, String? width, String? kind, String? name,
+            String? size, String? url)?
         media,
     TResult Function(String url)? web,
   }) {
@@ -594,8 +606,8 @@ class _$MediaLinkeable implements MediaLinkeable {
             String slug,
             bool isBroken)?
         document,
-    TResult Function(String? height, String? width, String kind, String name,
-            String size, String url)?
+    TResult Function(String? height, String? width, String? kind, String? name,
+            String? size, String? url)?
         media,
     TResult Function(String url)? web,
     required TResult orElse(),
@@ -650,10 +662,10 @@ abstract class MediaLinkeable implements Linkeable {
   const factory MediaLinkeable(
       {String? height,
       String? width,
-      required String kind,
-      required String name,
-      required String size,
-      required String url}) = _$MediaLinkeable;
+      String? kind,
+      String? name,
+      String? size,
+      String? url}) = _$MediaLinkeable;
 
   factory MediaLinkeable.fromJson(Map<String, dynamic> json) =
       _$MediaLinkeable.fromJson;
@@ -661,10 +673,10 @@ abstract class MediaLinkeable implements Linkeable {
 // @JsonKey(name: 'link_type') required String linkType,
   String? get height;
   String? get width;
-  String get kind;
-  String get name;
-  String get size;
-  String get url;
+  String? get kind;
+  String? get name;
+  String? get size;
+  String? get url;
   @JsonKey(ignore: true)
   $MediaLinkeableCopyWith<MediaLinkeable> get copyWith =>
       throw _privateConstructorUsedError;
@@ -727,11 +739,12 @@ class _$WebLinkeable implements WebLinkeable {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is WebLinkeable &&
-            (identical(other.url, url) || other.url == url));
+            const DeepCollectionEquality().equals(other.url, url));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, url);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(url));
 
   @JsonKey(ignore: true)
   @override
@@ -749,8 +762,8 @@ class _$WebLinkeable implements WebLinkeable {
             String slug,
             bool isBroken)
         document,
-    required TResult Function(String? height, String? width, String kind,
-            String name, String size, String url)
+    required TResult Function(String? height, String? width, String? kind,
+            String? name, String? size, String? url)
         media,
     required TResult Function(String url) web,
   }) {
@@ -768,8 +781,8 @@ class _$WebLinkeable implements WebLinkeable {
             String slug,
             bool isBroken)?
         document,
-    TResult Function(String? height, String? width, String kind, String name,
-            String size, String url)?
+    TResult Function(String? height, String? width, String? kind, String? name,
+            String? size, String? url)?
         media,
     TResult Function(String url)? web,
   }) {
@@ -787,8 +800,8 @@ class _$WebLinkeable implements WebLinkeable {
             String slug,
             bool isBroken)?
         document,
-    TResult Function(String? height, String? width, String kind, String name,
-            String size, String url)?
+    TResult Function(String? height, String? width, String? kind, String? name,
+            String? size, String? url)?
         media,
     TResult Function(String url)? web,
     required TResult orElse(),

@@ -1,6 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:flusmic/flusmic.dart';
-import 'package:flusmic/src/flusmic_error.dart';
 
 /// Flusmic - repository class
 ///
@@ -70,6 +69,7 @@ class Flusmic {
     String? after,
     String? authToken,
     String? language,
+    String? graphQuery,
     int? page,
     int? pageSize,
   }) async {
@@ -82,6 +82,7 @@ class Flusmic {
           authToken: authToken,
           fetch: fetch,
           fetchLinks: fetchLinks,
+          graphQuery: graphQuery,
           language: language,
           orderings: orderings,
           page: page,
@@ -96,7 +97,40 @@ class Flusmic {
     }
   }
 
-  ///Utility and legacy methods
+  /// Fetch by query using graphQuery
+  /// Get result by query using only the graphQuery
+  Future<FlusmicResponse> graphQuery(
+    String graphQuery, {
+    List<Ordering>? orderings,
+    String? after,
+    String? authToken,
+    String? language,
+    int? page,
+    int? pageSize,
+  }) async {
+    try {
+      final api = await getApi(authToken: authToken);
+      final response = await _client.get<dynamic>(
+        _generateSimpleUrl(api.refs.first.ref),
+        queryParameters: _generateParams(
+          after: after,
+          authToken: authToken,
+          graphQuery: graphQuery,
+          language: language,
+          orderings: orderings,
+          page: page,
+          pageSize: pageSize,
+        ),
+      );
+      return FlusmicResponse.fromJson(response.data as Map<String, dynamic>);
+    } on DioError catch (error) {
+      throw FlusmicError.fromResponse(error.response);
+    } on TypeError catch (error) {
+      throw FlusmicError.fromError(error);
+    }
+  }
+
+  //** Utility and legacy methods */
 
   ///Fetch Root
   ///Get the API root document of prismic repository
@@ -147,6 +181,7 @@ class Flusmic {
     String? after,
     String? authToken,
     String? language,
+    String? graphQuery,
   }) =>
       <String, dynamic>{
         if (after?.isNotEmpty ?? false) 'after': after,
@@ -161,12 +196,19 @@ class Flusmic {
               '[${orderings?.map(_generateOrdering).toList().join(',')}]',
         if (page != null) 'page': page.toString(),
         if (pageSize != null) 'pageSize': pageSize.toString(),
+        if (graphQuery?.isNotEmpty ?? false) 'graphQuery': graphQuery,
       };
 
   ///Generate the API url to perform a request.
   String _generateUrl(List<Predicate> predicates, String apiRef) {
     final queries = predicates.map(_generateQueries).toList();
     return '$_documentPath$apiRef${queries.join()}';
+  }
+
+  ///Generate the API url to perform a request without predicates.
+  ///Used in graphQuery.
+  String _generateSimpleUrl(String apiRef) {
+    return '$_documentPath$apiRef';
   }
 
   ///Convert predicate into query string

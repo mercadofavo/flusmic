@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'embed_data.dart';
@@ -379,47 +380,45 @@ class _$_EmbedData implements _EmbedData {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _EmbedData &&
-            (identical(other.authorName, authorName) ||
-                other.authorName == authorName) &&
-            (identical(other.authorUrl, authorUrl) ||
-                other.authorUrl == authorUrl) &&
-            (identical(other.embedUrl, embedUrl) ||
-                other.embedUrl == embedUrl) &&
-            (identical(other.providerName, providerName) ||
-                other.providerName == providerName) &&
-            (identical(other.providerUrl, providerUrl) ||
-                other.providerUrl == providerUrl) &&
-            (identical(other.thumbnailHeight, thumbnailHeight) ||
-                other.thumbnailHeight == thumbnailHeight) &&
-            (identical(other.thumbnailUrl, thumbnailUrl) ||
-                other.thumbnailUrl == thumbnailUrl) &&
-            (identical(other.thumbnailWidth, thumbnailWidth) ||
-                other.thumbnailWidth == thumbnailWidth) &&
-            (identical(other.html, html) || other.html == html) &&
-            (identical(other.title, title) || other.title == title) &&
-            (identical(other.type, type) || other.type == type) &&
-            (identical(other.version, version) || other.version == version) &&
-            (identical(other.height, height) || other.height == height) &&
-            (identical(other.width, width) || other.width == width));
+            const DeepCollectionEquality()
+                .equals(other.authorName, authorName) &&
+            const DeepCollectionEquality().equals(other.authorUrl, authorUrl) &&
+            const DeepCollectionEquality().equals(other.embedUrl, embedUrl) &&
+            const DeepCollectionEquality()
+                .equals(other.providerName, providerName) &&
+            const DeepCollectionEquality()
+                .equals(other.providerUrl, providerUrl) &&
+            const DeepCollectionEquality()
+                .equals(other.thumbnailHeight, thumbnailHeight) &&
+            const DeepCollectionEquality()
+                .equals(other.thumbnailUrl, thumbnailUrl) &&
+            const DeepCollectionEquality()
+                .equals(other.thumbnailWidth, thumbnailWidth) &&
+            const DeepCollectionEquality().equals(other.html, html) &&
+            const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality().equals(other.type, type) &&
+            const DeepCollectionEquality().equals(other.version, version) &&
+            const DeepCollectionEquality().equals(other.height, height) &&
+            const DeepCollectionEquality().equals(other.width, width));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      authorName,
-      authorUrl,
-      embedUrl,
-      providerName,
-      providerUrl,
-      thumbnailHeight,
-      thumbnailUrl,
-      thumbnailWidth,
-      html,
-      title,
-      type,
-      version,
-      height,
-      width);
+      const DeepCollectionEquality().hash(authorName),
+      const DeepCollectionEquality().hash(authorUrl),
+      const DeepCollectionEquality().hash(embedUrl),
+      const DeepCollectionEquality().hash(providerName),
+      const DeepCollectionEquality().hash(providerUrl),
+      const DeepCollectionEquality().hash(thumbnailHeight),
+      const DeepCollectionEquality().hash(thumbnailUrl),
+      const DeepCollectionEquality().hash(thumbnailWidth),
+      const DeepCollectionEquality().hash(html),
+      const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(type),
+      const DeepCollectionEquality().hash(version),
+      const DeepCollectionEquality().hash(height),
+      const DeepCollectionEquality().hash(width));
 
   @JsonKey(ignore: true)
   @override

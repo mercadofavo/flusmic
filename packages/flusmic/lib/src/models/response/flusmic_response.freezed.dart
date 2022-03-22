@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'flusmic_response.dart';
@@ -308,37 +309,35 @@ class _$_FlusmicResponse implements _FlusmicResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _FlusmicResponse &&
-            (identical(other.nextPage, nextPage) ||
-                other.nextPage == nextPage) &&
-            (identical(other.prevPage, prevPage) ||
-                other.prevPage == prevPage) &&
-            (identical(other.resultsPerPage, resultsPerPage) ||
-                other.resultsPerPage == resultsPerPage) &&
-            (identical(other.resultsSize, resultsSize) ||
-                other.resultsSize == resultsSize) &&
-            (identical(other.totalPages, totalPages) ||
-                other.totalPages == totalPages) &&
-            (identical(other.totalResultsSize, totalResultsSize) ||
-                other.totalResultsSize == totalResultsSize) &&
+            const DeepCollectionEquality().equals(other.nextPage, nextPage) &&
+            const DeepCollectionEquality().equals(other.prevPage, prevPage) &&
+            const DeepCollectionEquality()
+                .equals(other.resultsPerPage, resultsPerPage) &&
+            const DeepCollectionEquality()
+                .equals(other.resultsSize, resultsSize) &&
+            const DeepCollectionEquality()
+                .equals(other.totalPages, totalPages) &&
+            const DeepCollectionEquality()
+                .equals(other.totalResultsSize, totalResultsSize) &&
             const DeepCollectionEquality().equals(other.results, results) &&
-            (identical(other.license, license) || other.license == license) &&
-            (identical(other.version, version) || other.version == version) &&
-            (identical(other.page, page) || other.page == page));
+            const DeepCollectionEquality().equals(other.license, license) &&
+            const DeepCollectionEquality().equals(other.version, version) &&
+            const DeepCollectionEquality().equals(other.page, page));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      nextPage,
-      prevPage,
-      resultsPerPage,
-      resultsSize,
-      totalPages,
-      totalResultsSize,
+      const DeepCollectionEquality().hash(nextPage),
+      const DeepCollectionEquality().hash(prevPage),
+      const DeepCollectionEquality().hash(resultsPerPage),
+      const DeepCollectionEquality().hash(resultsSize),
+      const DeepCollectionEquality().hash(totalPages),
+      const DeepCollectionEquality().hash(totalResultsSize),
       const DeepCollectionEquality().hash(results),
-      license,
-      version,
-      page);
+      const DeepCollectionEquality().hash(license),
+      const DeepCollectionEquality().hash(version),
+      const DeepCollectionEquality().hash(page));
 
   @JsonKey(ignore: true)
   @override

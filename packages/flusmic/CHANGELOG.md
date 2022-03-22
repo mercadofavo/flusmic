@@ -1,3 +1,15 @@
+## [3.2.1]
+* Fix `Linkeable` model to accept nullables
+* Update dependencies
+
+## [3.2.0]
+* New `graphQuery` method to interact with [fetchLinks v2](https://prismic.io/docs/technologies/graphquery-rest-api) (thanks to @BghinC for starting this)
+* Update dependencies
+
+## [3.1.3]
+* Update dependencies
+* `any_map` and `checked` build option enabled for model generation
+
 ## [3.1.2]
 * Update dependencies
 * Fix serialization for models
@@ -142,4 +154,3 @@
 ## [0.0.1] 
 * Prismic.io integration for flutter
 * First release.
-

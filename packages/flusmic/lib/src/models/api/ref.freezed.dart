@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'ref.dart';
@@ -172,15 +173,20 @@ class _$_Ref implements _Ref {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Ref &&
-            (identical(other.id, id) || other.id == id) &&
-            (identical(other.label, label) || other.label == label) &&
-            (identical(other.ref, ref) || other.ref == ref) &&
-            (identical(other.isMasterRef, isMasterRef) ||
-                other.isMasterRef == isMasterRef));
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.label, label) &&
+            const DeepCollectionEquality().equals(other.ref, ref) &&
+            const DeepCollectionEquality()
+                .equals(other.isMasterRef, isMasterRef));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id, label, ref, isMasterRef);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(label),
+      const DeepCollectionEquality().hash(ref),
+      const DeepCollectionEquality().hash(isMasterRef));
 
   @JsonKey(ignore: true)
   @override
